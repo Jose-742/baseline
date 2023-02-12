@@ -1,36 +1,58 @@
 <!DOCTYPE html>
-<html layout:decorate="~{layout}"
-	  xmlns:layout="http://www.w3.org/1999/xhtml"
-	  xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
 <head>
-<meta charset="utf-8">
-<body>
-			<section class="layout-content" layout:fragment="corpo">	
-				<main role="main">
-					<section class="jumbotron text-center">
-						<img class="d-block mx-auto mb-4" src="/image/spring-security.png"
-							width="72" height="72">
-						<div class="container">
-							<h1 class="jumbotron-heading">Clínica Spring Security</h1>
-							<p class="lead text-muted">Especialidades Médicas</p>
-						</div>				
-					</section>	
-					
-					<div class="album py-5 bg-light">
-						<div class="container d-flex justify-content-center">
-							<div class="alert alert-success" role="alert">
-							  <h4 class="alert-heading">Seja bem vindo!</h4>
-							  <p>Seu cadastro foi realizado com sucesso.</p>
-							  <hr>
-							  <p class="mb-0">Em breve você receberá um email para confirmação 
-							  de sua conta de acesso.</p>
-							</div>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cadastro realizado</title>
+	<link rel="icon" href="/img/logo-2.png">
+	<!--bootstrap 5-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+		crossorigin="anonymous"></script>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="/style/style.css">
+</head>
+
+<body >
+	<section class="container" style="background-color: white; height: 100vh;">
+		<section class="layout-content">
+			<main role="main">
+				<section class="jumbotron text-center">
+					<img class="d-block mx-auto mb-4" src="/img/logo-2.png" width="72" height="72">
+					<div class="container">
+						<h1 class="jumbotron-heading">Spring Security</h1>
+						<p class="lead text-muted">Envio de confirmação</p>
+					</div>
+				</section>
+
+				<div class="album py-5 bg-light">
+					<div class="container d-flex justify-content-center">
+						<div class="alert alert-success" role="alert">
+							<h4 class="alert-heading">Seja bem vindo!</h4>
+							<p>Seu cadastro foi realizado com sucesso.</p>
+							<hr>
+							<p class="mb-0">Em breve você receberá um email para confirmação
+								de sua conta de acesso.</p>
 						</div>
 					</div>
-					
-					<script th:src="~{}" th:fragment="js"></script>
-					<script th:inline="javascript" th:fragment="inlinescript"></script>
-				</main>
-			</section>
+				</div>
+
+				<script th:src="~{}" th:fragment="js"></script>
+				<script th:inline="javascript" th:fragment="inlinescript"></script>
+			</main>
+		</section>
+	</section>
+	<!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	</script>
+</body>
 
 </html>

@@ -69,17 +69,17 @@
 			<groupId>nz.net.ultraq.thymeleaf</groupId>
 			<artifactId>thymeleaf-layout-dialect</artifactId>
 		</dependency>
-		<!-- Pacote enviar email 
+		<!-- Pacote enviar email-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 				
-		Pacote apache para gerar codigo string -
+		<!--Pacote apache para gerar codigo string -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-		</dependency>-->
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
