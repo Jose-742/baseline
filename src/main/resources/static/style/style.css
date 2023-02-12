@@ -1,0 +1,68 @@
+body {
+	background: linear-gradient(90deg, #081A51, #3f5491);
+}
+
+.logo-center {
+	height: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	margin-top: 0;
+	padding: 8px;
+	padding-top: 30%;
+	color: #7c8db5 !important;
+}
+
+.form {
+	margin: 0 auto;
+	background-color: white;
+	padding-top: 10%;
+	padding-left: 3%;
+	padding-right: 3%;
+	height: 100vh;
+}
+
+.botao-form {
+	background-color: #081A51;
+	border: 1px solid #081A51;
+	color: white;
+}
+
+.botao-form:hover {
+	background-color: #0069d9;
+	border: 1px solid #0069d9;
+	color: white;
+}
+
+.title-login {
+	color: #25396f;
+	font-weight: bold;
+	line-height: 1.2;
+}
+
+.subtitle-login {
+	color: #7c8db5 !important;
+	font-size: 1.1rem;
+	line-height: 2.1rem;
+}
+
+.label-checkbox {
+	color: #7c8db5 !important;
+}
+
+@media screen and (max-width: 575px) {
+	.form {
+		height: 93vh;
+	}
+
+	.logo-center {
+		height: 0;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		margin-top: 0;
+		padding: 8px;
+		padding-top: 0%;
+		color: #7c8db5 !important;
+	}
+}

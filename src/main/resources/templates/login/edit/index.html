@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br" 
+	xmlns:th="http://www.thymeleaf.org" 
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="icon" href="/img/futurum.png">
+	<!--bootstrap 5-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="/style/style.css">
+</head>
+
+<body>
+	<section class="container-fluid">
+
+		<div class="row ">
+			<div class="col-sm-7" style="text-align: center;">
+				<section class="logo-center">
+					<h2>Bem-Vindo <img src="/img/logo-2.png" alt="" class="imgLogo"></h2>
+				</section>
+
+			</div>
+			<div class="col-sm-5 form" style="background-color: white; ">
+
+				<h1 class="title-login">Inscrever-se</h1>
+				<span class="subtitle-login">Insira seus dados para se registrar em nosso site.</span>
+			
+
+				<form th:action="${pessoa.id == null} ? @{/pessoa/save} : @{/pessoa/update}" th:object="${pessoa}" method="POST">
+					<div class="row">
+						<div class="col-12">
+							<div th:replace="~{fragments/alert}"></div>
+					 		<div th:replace="~{fragments/validacao :: validacao}"></div> 
+						</div>
+						
+						<div class="col-12">
+							<input type="hidden" th:field="*{id}" />
+							<label for="nome" class="form-label mtop"></label>
+							<input class="form-control form-control-lg" type="nome" 
+								id="nome" name="nome"  th:field="*{nome}"
+								placeholder="Nome" aria-label="default input example" required>
+						</div>
+						<div class="col-12">
+							<label for="sobrenome" class="form-label mtop"></label>
+							<input class="form-control form-control-lg" type="text" 
+								id="sobrenome" name="sobrenome"  th:field="*{sobrenome}"
+								placeholder="Sobrenome" aria-label="default input example" required>
+						</div>
+						<div class="col-12">
+							<label for="email" class="form-label mtop"></label>
+							<input class="form-control form-control-lg" type="email" 
+								id="email" name="username"  th:field="*{usuario.email}"
+								placeholder="E-mail" aria-label="default input example" required>
+						</div>
+						<div class="col-12">
+							<label for="senha" class="form-label mtop"></label>
+							<input class="form-control form-control-lg" type="password" 
+								id="senha" name="senha"  th:field="*{usuario.senha}"
+								placeholder="Senha" aria-label="default input example" required>
+						</div>
+						
+
+						<div class="col-12">
+							<button type="submit" class="btn botao-form btn-block btn-lg shadow-lg mt-5"style="width: 100%; ">
+								Inscrever-se
+							</button>
+						</div>
+						<div class="col-12 mt-3" style="text-align: center;">
+							<p class="label-checkbox">já tem uma conta? <a th:href="@{/login}">Faça login</a></p>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</section>
+	<!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	</script>
+</body>
+
+</html>

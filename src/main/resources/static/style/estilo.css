@@ -1,0 +1,18 @@
+.imgePerfil{
+    width: 40px;
+    height: 40px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.center{
+    text-align: center;
+}
+/*Cor do menu*/
+[class*=sidebar-dark-] {
+    background-color: #081a51;
+}
+/*Cor de fundo das paginas*/
+.content-wrapper {
+    background-color: #ebf3ff;
+}

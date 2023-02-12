@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<section class="conteiner" th:fragment="menu">
+		<!-- Main Sidebar Container -->
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+			<!-- Brand Logo -->
+			<a th:href="@{/inicio/}" class="brand-link center"> <img
+				src="/img/logo-2.png"alt="" width="50" height="50px">
+			</a>
+
+			<!-- Sidebar -->
+			<div class="sidebar">
+				<!-- Sidebar Menu -->
+				<nav class="mt-2">
+					<ul class="nav nav-pills nav-sidebar flex-column"
+						data-widget="treeview" role="menu" data-accordion="false">
+						<li class="nav-item menu-is-opening menu-open"><a href="#"
+							class="nav-link "> <i class="nav-icon fas fa-tachometer-alt"></i>
+								<p>
+									Dashboard
+									<i class="right fas fa-angle-left"></i>
+								</p>
+						</a>
+							<ul class="nav nav-treeview" style="display: block;">
+								<li class="nav-item"><a th:href="@{/equipamentos/list}" class="nav-link">
+										<i class="fas fa-wrench nav-icon"></i>
+										<p>Menu 1</p>
+								</a></li>
+								<li class="nav-item"><a  th:href="@{/espacosfisicos/list}" 
+									class="nav-link"> <i class="fas fa-wrench nav-icon"></i>
+										<p>Menu 2</p>
+								</a></li>
+								<li class="nav-item"><a th:href="@{/turnos/list}"
+									class="nav-link"> <i class="fas fa-wrench nav-icon"></i>
+										<p>Menu 3</p>
+								</a></li>
+							</ul></li>
+					</ul>
+				</nav>
+			</div>
+			<!-- /.sidebar -->
+		</aside>
+	</section>
+</body>
+</html>

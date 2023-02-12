@@ -1,0 +1,30 @@
+<div th:if="${success} != null" id="validacao">
+	<div class="alert alert-success alert-dismissible fade show" role="alert">
+		<i class="oi oi-check"></i>
+		<span>
+			<b th:text="${success}"></b>
+		</span>
+ <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>	</div>
+</div>
+
+
+<div th:if="${fail} != null" id="validacao">
+	<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		<i class="oi oi-check"></i>
+		<span>
+			<b th:text="${fail}"></b>
+		</span>
+		 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+</div>
+
+<div th:if="${warning} != null">
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		<i class="fas fa-exclamation-triangle"></i>
+		<span>
+			<strong th:text="${warning}"></strong>
+		</span>
+		 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+</div>
+
