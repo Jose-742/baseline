@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -87,6 +88,36 @@ public class PessoaController {
 		serviceUsuario.enviarEmail(usuario);
 
 		return "redirect:/pessoa/cadastro/realizado";
+	}
+	
+	@GetMapping("/recuperar/senha")
+	public String redefinirSenha(String email, ModelMap model) throws MessagingException {
+		if(serviceUsuario.pedidoRedefinicaoDeSenha(email)) {
+			model.addAttribute("sucesso", "Em instantes você receberá um e-mail para "
+					+ "prosseguir com a redefinição de sua senha.");
+			model.addAttribute("usuario", new Usuario(email));
+			return "/login/edit-senha/recuperar-senha";
+		}	
+		model.addAttribute("fail","E-mail inválido");
+		return "/login/edit-senha/index";
+	}
+	
+	@PostMapping("/nova/senha/")
+	public String confirmacaoDeRedefinicaoDeSenha(@Valid Usuario usuario, BindingResult result,ModelMap model) {
+		Usuario user = serviceUsuario.buscarPorEmail(usuario.getEmail());
+		if(result.hasErrors()) {
+			return "/login/edit-senha/recuperar-senha";
+		}
+		if(!user.getCodigoVerificador().equals(usuario.getCodigoVerificador())) {
+			result.addError(new ObjectError("fail","Código verificador não confere."));
+			return "/login/edit-senha/recuperar-senha";
+		}
+		user.setCodigoVerificador(null);
+		serviceUsuario.auterarSenha(user, usuario.getSenha());
+		model.addAttribute("alerta", "sucesso");
+		model.addAttribute("titulo", "Senha redefinida!");
+		model.addAttribute("texto", "Você já pode logar no sistema.");
+		return "/login/index";
 	}
 
 }

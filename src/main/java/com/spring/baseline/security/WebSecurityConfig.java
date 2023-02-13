@@ -28,7 +28,7 @@ public class WebSecurityConfig {
 				authorize
 				.requestMatchers("/style/**","/dist/**", "/plugins/**", "/script/**","/img/**").permitAll()
 				.requestMatchers("/password/**").permitAll()
-				.requestMatchers("/pessoa/cadastro/**", "/pessoa/save/**", "/pessoa/confirmacao/cadastro/**").permitAll()
+				.requestMatchers("/pessoa/cadastro/**", "/pessoa/save/**", "/pessoa/confirmacao/cadastro/**", "/pessoa/recuperar/senha/**", "/pessoa/nova/senha/**").permitAll()
 					.anyRequest()
 					.authenticated()
 					.and()

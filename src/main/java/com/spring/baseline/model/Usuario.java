@@ -53,6 +53,10 @@ public class Usuario implements Serializable, UserDetails{
 	
 	public Usuario() {}
 
+	public Usuario(String email) {
+		this.email = email;
+	}
+
 	public Long getId() {
 		return id;
 	}

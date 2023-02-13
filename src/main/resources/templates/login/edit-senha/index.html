@@ -5,8 +5,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Login</title>
-	<link rel="icon" href="/img/futurum.png">
+	<title>Pedido-Redefinir-senha</title>
+	<link rel="icon" href="/img/logo-2.png">
 	<!--bootstrap 5-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
@@ -29,15 +29,16 @@
 			<div class="col-sm-5 form" style="background-color: white; ">
 
 				<h1 class="title-login">Esqueceu sua senha</h1>
-				<span class="subtitle-login">Insira seu e-mail e enviaremos o link de redefinição de senha.</span>
+				<span class="subtitle-login">Insira seu e-mail e enviaremos um código de redefinição de senha.</span>
 			
 
-				<form th:action="@{/login}" method="POST">
+				<form th:action="@{/pessoa/recuperar/senha}" method="GET">
+					<div th:replace="~{fragments/alert}"></div>
 					<div class="row">
 
 						<div class="col-12">
 							<label for="email" class="form-label mtop"></label>
-							<input class="form-control form-control-lg" type="email" id="email" name="username"
+							<input class="form-control form-control-lg" type="email" id="email" name="email"
 								placeholder="E-mail" aria-label="default input example" autofocus required>
 						</div>					
 

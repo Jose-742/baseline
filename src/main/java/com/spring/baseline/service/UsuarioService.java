@@ -1,5 +1,6 @@
 package com.spring.baseline.service;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -74,5 +75,22 @@ public class UsuarioService implements UserDetailsService {
 		}
 		usuario.setAtivo(true);
 		return true;
+	}
+
+	public boolean pedidoRedefinicaoDeSenha(String email) throws MessagingException {
+		Usuario usuario = buscarPorEmailAtivo(email);
+		if(usuario == null) {
+			return false;
+		}
+		String verificador = RandomStringUtils.randomAlphabetic(6);
+		usuario.setCodigoVerificador(verificador);//savar codigo verificador
+		
+		emailService.enviarPedidoRedefinicaoSenha(email, verificador);
+		return true;
+	}
+
+	public void auterarSenha(Usuario usuario, String senha) {
+		usuario.setSenha(senha);
+		repository.save(cryptSenha(usuario));
 	}
 }
